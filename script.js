@@ -1,46 +1,34 @@
-/*let popup = document.querySelector('.popup');
-let buttonEdit = document.querySelector('.profile__button_type_edit');
-let buttonClose = document.querySelector('.popup__close-button');
-let getName = document.querySelector('.profile__name');
-let getHobby = document.querySelector('.profile__hobby');
-let formEdit = document.querySelector('.popup__container');
+let popup = document.querySelector('.popup'); // переменая попапа
+let buttonEdit = document.querySelector('.profile__button_type_edit'); // переменая - кнопка редактирования профиля
+let buttonClose = document.querySelector('.popup__close-button'); // переменая - кнопка закрытия попапа
+let nameInput = document.querySelector('.popup__input_type_name'); // переменая ввода имени
+let jobInput = document.querySelector('.popup__input_type_hobby'); // переменная ввода хобби
+let getName = document.querySelector('.profile__name'); // переменая имени
+let getHobby = document.querySelector('.profile__hobby'); // переменая хобби
+let formElement = document.querySelector('.popup__form'); // переменая формы
+let formSave = document.querySelector('popup__save-button'); // пкременая - кнопка сохранить значения имени и хобби
 
-function openPopup () {
-  popup.classList.add ('.popup_opened');
-}
-
-
-function openPopup () {
-  popup.classList.remove ('.popup_opened');
-}*/
-
-
-let editProfileButton = document.querySelector('.profile__button_type_edit');
-editProfileButton.addEventListener('click', function () {
-  let popup = document.querySelector('.popup');
+buttonEdit.addEventListener('click', function () {
   console.log(popup);
   popup.classList.add('popup_opened');
 })
 
-let editPopupCloseButton = document.querySelector('.popup__close-button');
-editPopupCloseButton.addEventListener('click', function () {
-  let popup = document.querySelector('.popup');
+buttonClose.addEventListener('click', function () {
   console.log(popup);
   popup.classList.remove('popup_opened');
 })
 
-/*let formElement = // Воспользуйтесь методом querySelector()
-
-// Обработчик «отправки» формы, хотя пока
-// она никуда отправляться не будет
 function formSubmitHandler (evt) {
-	evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
-												// Так мы можем определить свою логику отправки.
-												// О том, как это делать, расскажем позже.
+	evt.preventDefault();
+	nameInput.value = getName.textContent;
+	jobInput.value = getHobby.textContent;
 
-	// Находим поля формы в DOM
-	let nameInput = // Воспользуйтесь инструментом .querySelector()
-	let jobInput = // Воспользуйтесь инструментом .querySelector()
+  
+	formSave.addEventListener('click', function () {
+		getName.insertAdjacentText('afterbegin', nameInput.value);
+	  getHobby.insertAdjacentText('afterbegin', jobInput.value);
+		popup.classList.remove('popup_opened');
+	})
 
 	// Получите значение полей из свойства value
 
@@ -51,4 +39,4 @@ function formSubmitHandler (evt) {
 
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка»
-formElement.addEventListener('submit', formSubmitHandler);*/
+formElement.addEventListener('submit', formSubmitHandler);
