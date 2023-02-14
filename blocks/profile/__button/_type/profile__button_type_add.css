@@ -1,0 +1,24 @@
+.profile__button_type_add {
+  background-image: url(../../../../images/Vector\ add.svg);
+  background-size: 22px 22px;
+  width: 150px;
+  height: 50px;
+  transition: 0.3s ease-in;
+  border: 2px solid #ffffff;
+}
+
+.profile__button_type_add:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 768px) {
+  .profile__button_type_add  {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .profile__button_type_add {
+    background-size: 16px 16px;
+  }
+}

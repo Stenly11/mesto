@@ -1,0 +1,18 @@
+.profile__button_type_edit {
+  background-image: url(../../../../images/pen.svg);
+  background-size: 42% 42%;
+  height: 24px;
+  width: 24px;
+  transition: 0.3s ease-in;
+}
+
+.profile__button_type_edit:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 480px) {
+  .profile__button_type_edit  {
+    height: 18px;
+    width: 18px;
+  }
+}
