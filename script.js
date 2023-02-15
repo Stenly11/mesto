@@ -1,12 +1,11 @@
-let popup = document.querySelector('.popup'); // переменая попапа
-let buttonEdit = document.querySelector('.profile__button_type_edit'); // переменая - кнопка редактирования профиля
-let buttonClose = document.querySelector('.popup__close-button'); // переменая - кнопка закрытия попапа
-let nameInput = document.querySelector('.popup__input_type_name'); // переменая ввода имени
-let jobInput = document.querySelector('.popup__input_type_hobby'); // переменная ввода хобби
-let getName = document.querySelector('.profile__name'); // переменая имени
-let getHobby = document.querySelector('.profile__hobby'); // переменая хобби
-let formElement = document.querySelector('.popup__form'); // переменая формы
-let formSave = document.querySelector('popup__save-button'); // пкременая - кнопка сохранить значения имени и хобби
+let popup = document.querySelector('.popup'); // переменная попапа
+let buttonEdit = document.querySelector('.profile__button_type_edit'); // переменная - кнопка редактирования профиля
+let buttonClose = document.querySelector('.popup__close-button'); // переменная - кнопка закрытия попапа
+let nameInput = document.querySelector('.popup__input_type_name'); // переменная ввода имени
+let hobbyInput = document.querySelector('.popup__input_type_hobby'); // переменная ввода хобби
+let getName = document.querySelector('.profile__name'); // переменная имени
+let getHobby = document.querySelector('.profile__hobby'); // переменная хобби
+let formElement = document.querySelector('.popup__form'); // переменная формы
 
 buttonEdit.addEventListener('click', function () {
   console.log(popup);
@@ -18,25 +17,27 @@ buttonClose.addEventListener('click', function () {
   popup.classList.remove('popup_opened');
 })
 
-function formSubmitHandler (evt) {
-	evt.preventDefault();
-	nameInput.value = getName.textContent;
-	jobInput.value = getHobby.textContent;
-
-  
-	formSave.addEventListener('click', function () {
-		getName.insertAdjacentText('afterbegin', nameInput.value);
-	  getHobby.insertAdjacentText('afterbegin', jobInput.value);
-		popup.classList.remove('popup_opened');
-	})
-
-	// Получите значение полей из свойства value
-
-	// Выберите элементы, куда должны быть вставлены значения полей
-
-	// Вставьте новые значения с помощью textContent
+function openPopup(popup) {
+  popup.classList.add('popup_opened');
 }
 
-// Прикрепляем обработчик к форме:
-// он будет следить за событием “submit” - «отправка»
+function closePopup(popup) {
+  popup.classList.remove('popup_opened');
+}
+
+
+let userName = getName.textContent;
+let userHobby = getHobby.textContent;
+
+nameInput.value = userName;
+hobbyInput.value = userHobby;
+
+
+function formSubmitHandler (evt) {
+	evt.preventDefault(); 
+	getName.textContent = nameInput.value;
+	getHobby.textContent = hobbyInput.value;
+  closePopup(popup);
+}
+
 formElement.addEventListener('submit', formSubmitHandler);
