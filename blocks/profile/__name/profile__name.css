@@ -3,7 +3,8 @@
   padding: 0;
   font-weight: 500;
   font-size: 42px;
-  line-height: 94%;
+  line-height: 1.14;
+  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
  }
@@ -12,7 +13,6 @@
    .profile__name  {
      font-size: 34px;
      line-height: 1.2;
-     overflow: hidden;
    }
  }
  

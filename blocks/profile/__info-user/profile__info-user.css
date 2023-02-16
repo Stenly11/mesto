@@ -8,7 +8,7 @@
   .profile__info-user  {
     min-width: 220px;
     column-gap: 12px;
-    padding-left: 19px;
+    padding-left: 30px;
     align-items: center;
   }
 }
