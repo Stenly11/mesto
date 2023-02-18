@@ -10,13 +10,13 @@
 }
 
 @media screen and (max-width: 768px) {
-  .profile__hobby  {
+  .profile__hobby {
     text-align: center;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .profile__hobby  {
+  .profile__hobby {
     font-size: 14px;
   }
 }

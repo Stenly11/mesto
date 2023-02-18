@@ -19,17 +19,16 @@
 }
 
 @media screen and (max-width: 550px) {
-  .popup__close-button  {
-  width: 24px;
-  height: 24px;
-  transform: translate(0%, -195%);
+  .popup__close-button {
+    width: 24px;
+    height: 24px;
+    transform: translate(0%, -185%);
   }
 }
 
-
 @media screen and (max-width: 480px) {
-  .popup__close-button  {
-  width: 20px;
-  height: 20px;
+  .popup__close-button {
+    width: 20px;
+    height: 20px;
   }
 }

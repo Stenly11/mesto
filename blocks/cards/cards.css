@@ -8,8 +8,8 @@
 }
 
 @media screen and (max-width: 480px) {
-  .cards  {
-    width: calc(100% - 2*19px);
+  .cards {
+    width: calc(100% - 2 * 19px);
     margin-top: 36px;
     margin-bottom: 48px;
   }

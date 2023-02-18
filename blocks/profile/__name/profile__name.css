@@ -7,17 +7,17 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
- }
- 
- @media screen and (max-width: 768px) {
-   .profile__name  {
-     font-size: 34px;
-     line-height: 1.2;
-   }
- }
- 
- @media screen and (max-width: 480px) {
-   .profile__name  {
-     font-size: 27px;
-   }
- }
+}
+
+@media screen and (max-width: 768px) {
+  .profile__name {
+    font-size: 34px;
+    line-height: 1.2;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .profile__name {
+    font-size: 27px;
+  }
+}
