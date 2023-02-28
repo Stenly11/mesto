@@ -9,6 +9,7 @@
   height: 19px;
   transition: 0.3s ease-in;
   width: 22px;
+  flex-shrink: 0;
 }
 
 .card__like-button:hover {
