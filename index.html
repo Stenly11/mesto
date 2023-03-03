@@ -117,25 +117,23 @@
   </div>
   <div class="popup popup_type_add-card">
     <div class="popup__container">
-      <button class="popup__close-button popup__close-button-card" aria-label="Закрыть окно" type="button"></button>
+      <button class="popup__close-button" aria-label="Закрыть окно" type="button"></button>
       <h3 class="popup__title">Новое место</h3>
       <form class="popup__form" name="image edit">
         <input class="popup__input popup__input_type_name-img" required placeholder="Название" type="text" name="img">
-        <input class="popup__input popup__input_type_link-img" required placeholder="Ссылка на картинку" type="text"
+        <input class="popup__input popup__input_type_link-img" required placeholder="Ссылка на картинку" type="text link"
           name="link-img">
         <button class="popup__save-button" aria-label="Сохранить" type="submit">Сохранить</button>
       </form>
     </div>
   </div>
-  <template>
-    <div class="popup popup_type_zoom-image">
-      <figure class="popup__image-container">
-        <img class="popap__image" src="#" alt="#">
-        <figcaption class="popup__image-caption">#</figcaption>
-        <button class="popup__close-button popup__close-button-image" aria-label="Закрыть окно" type="button"></button>
-      </figure>
-    </div>
-  </template>
+  <div class="popup popup_type_zoom-image">
+    <figure class="popup__image-container">
+      <button class="popup__close-button" aria-label="Закрыть окно" type="button"></button>
+      <img class="popup__image" src="#" alt="#">
+      <figcaption class="popup__image-caption"></figcaption>
+    </figure>
+  </div>
   <script src="./scripts/script.js"></script>
 </body>
 
