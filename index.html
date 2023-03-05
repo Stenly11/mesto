@@ -27,66 +27,6 @@
       <button class="profile__button profile__button_type_add" aria-label="Добавить" type="button"></button>
     </section>
     <section class="cards" aria-label="Карточки">
-      <article class="card">
-        <div class="card__image-info">
-          <img class="card__image" src="./images/mesto/Baikal.jpg" alt="Байкал.">
-          <button class="card__image-delet-button" type="button"></button>
-        </div>
-        <div class="card__info">
-          <h2 class="card__title">Байкал</h2>
-          <button class="card__like-button" aria-label="Нравится" type="button"></button>
-        </div>
-      </article>
-      <article class="card">
-        <div class="card__image-info">
-          <img class="card__image" src="./images/mesto/Kara4aevsk.png" alt="Карачаевск.">
-          <button class="card__image-delet-button" type="button"></button>
-        </div>
-        <div class="card__info">
-          <h2 class="card__title">Карачаевск</h2>
-          <button class="card__like-button" aria-label="Нравится" type="button"></button>
-        </div>
-      </article>
-      <article class="card">
-        <div class="card__image-info">
-          <img class="card__image" src="./images/mesto/Dombai.png" alt="Домбай.">
-          <button class="card__image-delet-button" type="button"></button>
-        </div>
-        <div class="card__info">
-          <h2 class="card__title">Домбай</h2>
-          <button class="card__like-button" aria-label="Нравится" type="button"></button>
-        </div>
-      </article>
-      <article class="card">
-        <div class="card__image-info">
-          <img class="card__image" src="./images/mesto/Gora_Elbrus.png" alt="Гора Эльбрус.">
-          <button class="card__image-delet-button" type="button"></button>
-        </div>
-        <div class="card__info">
-          <h2 class="card__title">Гора Эльбрус</h2>
-          <button class="card__like-button" aria-label="Нравится" type="button"></button>
-        </div>
-      </article>
-      <article class="card">
-        <div class="card__image-info">
-          <img class="card__image" src="./images/mesto/Rostov.jpg" alt="Ростов.">
-          <button class="card__image-delet-button" type="button"></button>
-        </div>
-        <div class="card__info">
-          <h2 class="card__title">Ростов</h2>
-          <button class="card__like-button" aria-label="Нравится" type="button"></button>
-        </div>
-      </article>
-      <article class="card">
-        <div class="card__image-info">
-          <img class="card__image" src="./images/mesto/Vladimir.jpg" alt="Владимир.">
-          <button class="card__image-delet-button" type="button"></button>
-        </div>
-        <div class="card__info">
-          <h2 class="card__title">Владимир</h2>
-          <button class="card__like-button" aria-label="Нравится" type="button"></button>
-        </div>
-      </article>
       <template id="cardTemplate">
         <article class="card">
           <div class="card__image-info">
@@ -121,8 +61,8 @@
       <h3 class="popup__title">Новое место</h3>
       <form class="popup__form" name="image edit">
         <input class="popup__input popup__input_type_name-img" required placeholder="Название" type="text" name="img">
-        <input class="popup__input popup__input_type_link-img" required placeholder="Ссылка на картинку" type="text link"
-          name="link-img">
+        <input class="popup__input popup__input_type_link-img" required placeholder="Ссылка на картинку" type="text"
+          name="link">
         <button class="popup__save-button" aria-label="Сохранить" type="submit">Сохранить</button>
       </form>
     </div>
