@@ -1,4 +1,3 @@
-//let popup = document.querySelector(".popup"); // переменная попапа
 const profilePopup = document.querySelector('.popup_type_profile'); // переменная попапа профиля
 const buttonEdit = document.querySelector('.profile__button_type_edit'); // переменная - кнопка редактирования профиля
 const closeButtons = document.querySelectorAll('.popup__close-button'); // переменная - кнопки закрытия попапов
@@ -6,7 +5,7 @@ const nameInput = document.querySelector('.popup__input_type_name'); // пере
 const hobbyInput = document.querySelector('.popup__input_type_hobby'); // переменная ввода хобби
 const nameInProfile = document.querySelector('.profile__name'); // переменная имени
 const hobbyInProfile = document.querySelector('.profile__hobby'); // переменная хобби
-const profileForm = document.getElementsByName('profile edit')[0]; // переменная формы профиля(по имени формы)
+const profileForm = document.forms['profile edit']; // переменная формы профиля(по имени формы)
 
 buttonEdit.addEventListener('click', function () {
   openPopup(profilePopup);
@@ -96,21 +95,27 @@ const initialCards = [
 
 const cards = document.querySelector('.cards');
 
-function createCard(card) {
-  const newCard = document.querySelector('#cardTemplate').content.cloneNode(true);
-  const cardTitle = newCard.querySelector('.card__title');
-  cardTitle.textContent = card.name;
-  const cardImage = newCard.querySelector('.card__image');
-  cardImage.src = card.link;
-  cardImage.alt = card.name;
-  const buttonDeletCard = newCard.querySelector('.card__image-delet-button');
+function getCard(item) {
+  const cardElement = document.querySelector('#cardTemplate').content.querySelector('.card');
+  const card = cardElement.cloneNode(true);
+  const cardTitle = card.querySelector('.card__title');
+  cardTitle.textContent = item.name;
+  const cardImage = card.querySelector('.card__image');
+  cardImage.src = item.link;
+  cardImage.alt = item.name;
+  const buttonDeletCard = card.querySelector('.card__image-delet-button');
   buttonDeletCard.addEventListener('click', deleteCard);
-  const buttonLike = newCard.querySelector('.card__like-button');
-  cards.prepend(newCard);
+  const buttonLike = card.querySelector('.card__like-button');
   buttonLike.addEventListener('click', аddLike);
   cardImage.addEventListener('click', function () {
-    openPopupZoomImage(card);
+    openPopupZoomImage(item);
   });
+return card;
+}
+
+function createCard(card) {              //Функция создания новой карточки
+  const newCard = getCard(card);
+  cards.prepend(newCard);
 }
 
 initialCards.forEach(createCard);
@@ -126,7 +131,7 @@ function аddLike(event) {
   button.classList.toggle('card__like-button_type_active');
 }
 
-const newCardForm = document.getElementsByName('image edit')[0];
+const newCardForm = document.forms['image edit'];
 newCardForm.addEventListener('submit', handleNewCardFormSubmit);
 function handleNewCardFormSubmit(event) {
   event.preventDefault();
