@@ -60,8 +60,9 @@
       <button class="popup__close-button" aria-label="Закрыть окно" type="button"></button>
       <h3 class="popup__title">Новое место</h3>
       <form class="popup__form" name="image edit">
-        <input class="popup__input popup__input_type_name-img" required placeholder="Название" type="text" name="img">
-        <input class="popup__input popup__input_type_link-img" required placeholder="Ссылка на картинку" type="text"
+        <input class="popup__input popup__input_type_name-img" required placeholder="Название" type="text" name="img"
+          minlength="2" maxlength="30">
+        <input class="popup__input popup__input_type_link-img" required placeholder="Ссылка на картинку" type="url"
           name="link">
         <button class="popup__save-button" aria-label="Сохранить" type="submit">Сохранить</button>
       </form>

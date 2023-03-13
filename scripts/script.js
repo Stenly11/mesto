@@ -6,6 +6,7 @@ const hobbyInput = document.querySelector('.popup__input_type_hobby'); // пер
 const nameInProfile = document.querySelector('.profile__name'); // переменная имени
 const hobbyInProfile = document.querySelector('.profile__hobby'); // переменная хобби
 const profileForm = document.forms['profile edit']; // переменная формы профиля(по имени формы)
+const popups = document.querySelectorAll('.popup'); // переменная всех попапов
 
 buttonEdit.addEventListener('click', function () {
   openPopup(profilePopup);
@@ -17,6 +18,24 @@ closeButtons.forEach((button) => {
   const popup = button.closest('.popup');
   button.addEventListener('click', () => closePopup(popup));
 });
+
+// Закрытие попапов кликом на оверлей 
+popups.forEach((element) => {
+  const popup = element.closest('.popup');
+  element.addEventListener('click', (evt) => {
+    if (evt.target === popup) {
+      closePopup(popup);
+    }
+  })});
+  
+// Закрытие попапов нажатием на Esc
+popups.forEach((element) => {
+  document.addEventListener('keydown', (evt) => {
+  const popup = element.closest('.popup');
+    if (evt.key === "Escape"){
+      closePopup(popup); 
+    }
+ })});
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
