@@ -12,6 +12,7 @@ buttonEdit.addEventListener('click', function () {
   openPopup(profilePopup);
   nameInput.value = nameInProfile.textContent;
   hobbyInput.value = hobbyInProfile.textContent;
+  resetError(profilePopup, config);
 });
 
 closeButtons.forEach((button) => {
@@ -61,6 +62,8 @@ const popupAddCard = document.querySelector('.popup_type_add-card'); // пере
 
 buttonAddCard.addEventListener('click', function () {
   openPopup(popupAddCard);
+  newCardForm.reset();
+  resetError(popupAddCard, config);
 });
 
 const initialCards = [
@@ -175,66 +178,3 @@ function openPopupZoomImage(element) {
   cardImagePopup.alt = element.name;
   openPopup(imageZoom);
 };
-
-
-//Валидация форм
-
-
-const showInterError = (errorTextElement, validationMessage, visibleErrorClass, ) => {
-  //inputError.classList.add(inputErrorClass);
-  errorTextElement.textContent = validationMessage;
-  errorTextElement.classList.add(visibleErrorClass);
-
-
-};
-
-const hideInterError = (errorTextElement, visibleErrorClass, ) => {
-  //inputError.classList.remove(inputErrorClass);
-  errorTextElement.classList.remove(visibleErrorClass);
-  errorTextElement.textContent = '';
-
-};
-
-const checkInputValidity = (input, errorClassTemplate, visibleErrorClass, inputErrorClass) => {
-  const errorTextElement = document.querySelector(`${errorClassTemplate}${input['name']}`);
-  if (!input.validity.valid){
-    showInterError(errorTextElement, input.validationMessage, visibleErrorClass, );
-  }
-  else {
-    hideInterError(errorTextElement, );
-  }
-
-}
-
-const setEventListeners = (formList, inputList, errorClassTemplate, visibleErrorClass, ) => {
-  formList.forEach((form) => {
-    form.addEventListener('submit', (evt) => {
-      console.log(form);
-      evt.preventDefault();
-    });
-  });
-  
-  inputList.forEach((input) => {
-    input.addEventListener('input',(e) => {
-      checkInputValidity(input, errorClassTemplate, visibleErrorClass,);
-      console.log(e.target.value);
-    });
-  });
-
-}
-
-const enableValidation = (config) => {
-  const formList = document.querySelectorAll(config.formSelector);
-  const inputList = document.querySelectorAll(config.inputSelector);
-  setEventListeners(formList, inputList, config.errorClassTemplate, config.visibleErrorClass, config.inputErrorClass, )
-
-
-  };
-  enableValidation({
-    formSelector: '.popup__form',
-    inputSelector: '.popup__input',
-    errorClassTemplate: '.popup__input-error_type_',
-    visibleErrorClass: 'popup__input-error_visible',
-    inputErrorClass: 'popup__input_type_error',
-    
-  });
