@@ -49,10 +49,10 @@
       <button class="popup__close-button" aria-label="Закрыть окно" type="button"></button>
       <h3 class="popup__title">Редактировать профиль</h3>
       <form class="popup__form" name="profile edit" novalidate>
-        <input id="name-input" class="popup__input popup__input_type_name" required placeholder="Имя" type="text" name="name"
-          minlength="2" maxlength="40"><span class="popup__input-error name-input-error"></span>
-        <input id="hoby-input" class="popup__input popup__input_type_hobby" required placeholder="Хобби" type="text" name="hobby"
-          minlength="2" maxlength="200"><span class="popup__input-error hoby-input-error"></span>
+        <input id="name-input" class="popup__input popup__input_type_name" required placeholder="Имя" type="text"
+          name="name" minlength="2" maxlength="40"><span class="popup__input-error name-input-error"></span>
+        <input id="hoby-input" class="popup__input popup__input_type_hobby" required placeholder="Хобби" type="text"
+          name="hobby" minlength="2" maxlength="200"><span class="popup__input-error hoby-input-error"></span>
         <button class="popup__save-button" aria-label="Сохранить" type="submit">Сохранить</button>
       </form>
     </div>
@@ -62,11 +62,12 @@
       <button class="popup__close-button" aria-label="Закрыть окно" type="button"></button>
       <h3 class="popup__title">Новое место</h3>
       <form class="popup__form" name="image edit" novalidate>
-        <input id="img-input" class="popup__input popup__input_type_name-img" required placeholder="Название" type="text" name="img"
-          minlength="2" maxlength="30"><span class="popup__input-error img-input-error"></span>
-        <input id="url-input" class="popup__input popup__input_type_link-img" required placeholder="Ссылка на картинку" type="url"
-          name="link"><span class="popup__input-error url-input-error"></span>
-        <button class="popup__save-button popup__save-button_disable" aria-label="Сохранить" type="submit">Сохранить</button>
+        <input id="img-input" class="popup__input popup__input_type_name-img" required placeholder="Название"
+          type="text" name="img" minlength="2" maxlength="30"><span class="popup__input-error img-input-error"></span>
+        <input id="url-input" class="popup__input popup__input_type_link-img" required placeholder="Ссылка на картинку"
+          type="url" name="link"><span class="popup__input-error url-input-error"></span>
+        <button class="popup__save-button popup__save-button_disable" aria-label="Сохранить"
+          type="submit">Сохранить</button>
       </form>
     </div>
   </div>
@@ -77,7 +78,7 @@
       <figcaption class="popup__image-caption"></figcaption>
     </figure>
   </div>
-
+  <script src="./scripts/constants.js"></script>
   <script src="./scripts/script.js"></script>
   <script src="./scripts/validate.js"></script>
 </body>
