@@ -69,21 +69,12 @@ buttonAddCard.addEventListener("click", function () {
   resetError(popupAddCard, config);
 });
 
-
 const cards = document.querySelector(".cards");
 
 initialCards.forEach((item) => {
-  // Создадим экземпляр карточки
-  const card = new Card(item, "#cardTemplate", openPopupZoomImage);
-  const cardElement = card.generateCard();
-  cards.append(cardElement);
+  const card = new Card(item, "#cardTemplate",openPopupZoomImage);
+  cards.append(card.generateCard());
 });
-
-function createCard(item){
-  const card = new Card(item, "#cardTemplate", openPopupZoomImage);
-  const cardElement = card.generateCard();
-  cards.prepend(cardElement);
-}
 
 const newCardForm = document.forms["image edit"];
 const linkCard = newCardForm.querySelector(".popup__input_type_link-img");
@@ -92,10 +83,8 @@ newCardForm.addEventListener("submit", handleNewCardFormSubmit);
 function handleNewCardFormSubmit(event) {
   event.preventDefault();
   const form = event.target;
-  const link = linkCard.value;
-  const name = nameCard.value;
-  const card = { name, link };
-  createCard(card);
+  const card = new Card({name: nameCard.value, link: linkCard.value},"#cardTemplate",openPopupZoomImage);
+  cards.prepend(card.generateCard());
   closePopup(popupAddCard);
   form.reset();
 }

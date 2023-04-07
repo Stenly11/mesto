@@ -1,9 +1,9 @@
 export default class Card {
-  constructor(data, templateSelector, handleLargeImageClick) {
+  constructor(data, templateSelector, handleCardImageClick) {
     this._name = data.name;
     this._link = data.link;
     this._templateSelector = templateSelector;
-    this._handleLargeImageClick = handleLargeImageClick;
+    this._handleCardImageClick = handleCardImageClick;
   }
 
   _getTemplate() {
@@ -24,7 +24,7 @@ export default class Card {
     this._cardImage.src = this._link;
     this._cardImage.alt = this._name;
     this._cardTitle.textContent = this._name;
-    this._cardImage.addEventListener("click", () => {this._handleLargeImageClick(this._name, this._link);});
+    this._cardImage.addEventListener("click", () => {this._handleCardImageClick(this._name, this._link);});
 
     this._setEventListeners(); // добавим обработчики
 
